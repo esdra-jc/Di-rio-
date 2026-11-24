@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6d1b34">
+<title>Nosso Diário de Amor ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Caveat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+
+<main id="cover" class="cover">
+  <button class="ib faint corner" data-admin aria-label="Personalizar o diário">⚙</button>
+  <div class="cover-card" id="coverCard">
+    <h1>Nossa História de Amor</h1>
+    <p class="names" id="names"></p>
+    <p class="since" id="since"></p>
+    <button id="coverPhoto" class="photo-frame" aria-label="Adicionar foto do casal"></button>
+    <input type="file" id="fileCover" accept="image/*" hidden>
+    <div class="pets" aria-hidden="true">
+      <span data-char="cat" data-f="#f4b98a"></span>
+      <span data-char="pup" data-heart="1"></span>
+      <span data-char="pilar"></span>
+      <span data-char="pup"></span>
+      <span data-char="cat" data-f="#cfd3dc"></span>
+    </div>
+    <button id="openBtn" class="open">Abrir nosso diário</button>
+  </div>
+</main>
+
+<div id="book" class="book" hidden>
+  <header class="bar">
+    <button class="ib" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <h1 id="title" class="bar-title" tabindex="-1"></h1>
+    <button class="ib" id="musicBtn" aria-label="Ligar ou desligar a música" aria-pressed="false"><span class="note">♪</span></button>
+    <input id="vol" class="vol" type="range" min="0" max="1" step="0.05" value="0.25" aria-label="Volume da música">
+    <button class="ib faint" data-admin aria-label="Personalizar o diário">⚙</button>
+  </header>
+  <div id="pages" class="pages"></div>
+  <footer class="bar nav">
+    <button class="ib" id="prev" aria-label="Página anterior">‹</button>
+    <span id="ind" aria-live="polite"></span>
+    <button class="ib" id="next" aria-label="Próxima página">›</button>
+  </footer>
+  <nav id="menu" class="menu" hidden aria-label="Menu do diário">
+    <ul id="menuList"></ul>
+    <button class="btn gold" id="toCover">Voltar à capa</button>
+    <button class="btn" id="menuClose">Fechar</button>
+  </nav>
+</div>
+
+<div id="admin" class="sheet" role="dialog" aria-modal="true" aria-labelledby="adT" hidden>
+  <div class="panel">
+    <h2 id="adT">Personalizar</h2>
+    <p class="sub">Esta área não é um sistema de segurança: quem estiver com o aparelho pode abri-la. Tudo fica salvo só neste navegador e aparelho.</p>
+    <label>Seu nome <input id="a-n1" data-cfg="n1"></label>
+    <label>Nome dela <input id="a-n2" data-cfg="n2"></label>
+    <label>Início do relacionamento <input id="a-date" type="datetime-local" data-cfg="date"></label>
+    <label>Mensagens da Pilar (uma por linha) <textarea id="a-pilar" rows="4" data-cfg="pilar"></textarea></label>
+    <button class="btn gold" id="adClose">Concluir</button>
+  </div>
+</div>
+
+<audio id="bgm" src="musicas/musica.mp3" loop preload="none"></audio>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
